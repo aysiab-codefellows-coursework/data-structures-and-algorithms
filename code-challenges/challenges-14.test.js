@@ -140,6 +140,8 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  arr.sort((a, b) => (a[property]> b[property]) ? 1 : -1);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
