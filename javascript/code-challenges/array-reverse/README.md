@@ -11,7 +11,7 @@ Our approach was to first visualize what the initial input looked like and then 
 
 Take a look at the whiteboard below for additional details.
 
-![WhiteBoard](arrayreverse-wb.png)
+![WhiteBoard](../assets/arrayreverse-wb.png)
 
 
 ## Solution 
