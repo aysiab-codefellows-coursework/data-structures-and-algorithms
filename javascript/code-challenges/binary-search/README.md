@@ -3,10 +3,11 @@
 ### Collaborated with: Nathan Cox 
 
 ## Challenge Description 
-The problem domain was to create a function insertShiftArray that accepted two arguments, an array and a value and returns an array with the new value inserted at the middle index of the array and the additional array values shifted over. 
+The problem domain was to create a function a Binary Search function given two arguments; a sorted array and a key value. A binary search iterates through the array first checking at the middle index value and comparing it to the key value. Depending on whether or not the key value or greater or lesser than, the algorithm is expected to keep halving the array depending on the midpoint index's value until either the index value equal to the key value is found, or it's not found and the function returns -1. 
 
 ## Approach & Efficiency 
-Visualizing the input and the expected output was helpful in indetifying what steps the algorithm needed to take to get there. Without being able to use Math.ceil, we had to account for rounding the 'middle' index in case of an odd number by hand. This was achieved by checking if the midpoint came out at a clean even number, and if not to manually add 0.5 to account for rounding up.
+Our first approach was to use a recursive method, however that required adding two additional parameters. To solve for not being able to take arguments for starting index and ending index, we initialized those variables within the function and our iterative logic was done with a while loop. 
 
 ## Solution 
-![whiteboard](../assets/arrayshift-wb.png)
+![whiteboard](../assets/binarysearch-wb.png)
+[Additionl Resource W3School](w3resource.com/javascript-exercises/javascript-array-exercise-18.php)
