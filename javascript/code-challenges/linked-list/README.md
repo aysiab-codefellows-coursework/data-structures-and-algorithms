@@ -14,8 +14,19 @@
     - includes runs at a O(n) run time.
 - The toString method works similarly to includes by looping through the entire Linked List and adding the value to a string that will be returned. 
     - toString runs at a O(n) run time. 
+- The append method iterates through the list to find the last node by searching if node.next is null. If node.next is null then the new Node will bet set to that. 
+    - append has a O(n) run time
+- The insertBefore and insertAfter methods were approached similarly by iterating through the list into the given value is found. If the value is the same value as the current node.next then we will insert the new nodes.next as current node.next and save current node.next as the new node (insertBefore). However, if the current node's value is the given value we will do the same reassigning of variables as above.
+    - both insertBefoe and insertAfter run at O(n)
 
 ## API
-- `LinkedList.insert()` will insert a new node at the head of the Linked List and assign it's next node as the former head's node.
-- `LinkedList.includes()` will loop through the entire Linked List comparing a value to every Node value, stopping if found and returning `true`. Otherwise returning `false`. 
+- `LinkedList.insert(value)` will insert a new node at the head of the Linked List and assign it's next node as the former head's node.
+- `LinkedList.includes(value)` will loop through the entire Linked List comparing a value to every Node value, stopping if found and returning `true`. Otherwise returning `false`. 
 - `LinkedList.toString()` will print the entire contents's value of the Linked List in this notation: `{ a } -> { b } -> { c } -> NULL` 
+- `LinkedList.append(value)` will append a new node to the end of the list 
+- `LinkedList.insertBefore(value, newVal)` will insert a new node before a given node value in the list 
+- `LinkedList.insertAfter(value, newVal)` will insert a new node after a given node value in the list  
+
+
+## White Board
+![Linked List Insert](../assets/ll-insertwb.JPG)
