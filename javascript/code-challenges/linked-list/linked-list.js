@@ -59,7 +59,7 @@ class LinkedList {
     insertBefore(value, newVal) {
         let curr = this.head;
         if(this.head == null) {
-            throw new Exception('There is no head');   
+            throw new Exception('The list is empty.');   
         } else if(this.head.next == null) {
             let newNode = new Node(newVal);
             newNode.next = this.head;
@@ -79,7 +79,7 @@ class LinkedList {
     insertAfter(value, newVal) {
         let curr = this.head;
         if(this.head == null) {
-            throw new Exception('There is no head');
+            throw new Exception('The list is empty.');
         }
         while(curr != null) {
             if(curr.value == value) {
@@ -90,6 +90,40 @@ class LinkedList {
             }
             curr = curr.next;
         }
+    }
+
+    kthFromTheEnd(k) {
+        let curr = this.head;
+        let count = 1;
+        let length = 0;
+        let index = 0;
+        if(this.head == null) {
+            throw new Exception('The list is empty.')
+        }
+        
+        while(curr != null) {
+            length++;
+            curr = curr.next;
+            if(k == 0 && curr.next == null) {
+                return curr.value;
+            }
+        }
+
+        index = length - k;
+        curr = this.head; 
+
+        if(index < 0) {
+            throw new Exception('Index out of bounds.')
+        }
+
+        while(count <= index) {
+            if(count == index) {
+                return curr.value;
+            }
+            count++;
+            curr = curr.next;
+        }
+
     }
     
 }
