@@ -93,12 +93,54 @@ describe('Linked List', () => {
     ll.insertAfter('cat','parakeet');
     expect(ll.toString()).toBe('{ mouse } -> { dog } -> { cat } -> { parakeet } -> NULL')
   })
+
+  it('Where k is greater than the length of the linked list', () => {
+    ll.insert('cat');
+    ll.insert('dog')
+    ll.insert('mouse')
+    expect(() => {
+      ll.kthFromTheEnd(4)
+    }).toThrow()
+  })
+
+  it('Where k and the length of the list are teh same', () => {
+    ll.insert('cat')
+    ll.insert('dog')
+    ll.insert('mouse')
+    expect(ll.kthFromTheEnd(3)).toBe(undefined)
+  })
+
+  it('Where k is not a positive integer', () => {
+    ll.insert('cat');
+    ll.insert('dog')
+    ll.insert('mouse')
+    expect(() => {
+      ll.kthFromTheEnd(-1)
+    }).toThrow()
+  })
+  
+  it('Where the linked list is a size of 1', () => {
+    ll.insert('cat')
+    expect(() => {
+      ll.kthFromTheEnd(2)
+    }).toThrow()
+  })
+
+  it('Happy path: where the value of k is returned', () => {
+    ll.insert('cat')
+    ll.insert('dog')
+    ll.insert('mouse')
+    expect(ll.kthFromTheEnd(2)).toBe('mouse')
+  })
+
+
 });
 
 
 
 
-// Can successfully insert a node after the last node of the linked list
+// Where the linked list is of a size 1
+// “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
 
 
 
