@@ -20,3 +20,5 @@ function llzip(first, second) {
     }
     return first.head;
 }
+
+module.exports = llzip;
