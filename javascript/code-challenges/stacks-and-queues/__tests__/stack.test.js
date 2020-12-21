@@ -25,7 +25,8 @@ describe('Stack', () => {
         stack.push('cat');
         stack.push('dog');
         stack.push('mouse');
-        expect(stack.pop()).toBe('mouse');
+        stack.pop();
+        expect(stack.peek()).toBe('dog');
     })
 
     it('Can successfully empty a stack after multiple pops',() => {
@@ -35,7 +36,7 @@ describe('Stack', () => {
         stack.pop();
         stack.pop();
         stack.pop();
-        expect(stack.isEmpty).toBeTruthy();
+        expect(stack.isEmpty()).toBeTruthy();
     })
 
     it('Can successfuly peek the next item in the stack', () => {
