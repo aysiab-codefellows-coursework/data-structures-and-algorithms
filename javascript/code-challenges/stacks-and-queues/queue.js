@@ -23,7 +23,7 @@ class Queue {
 
     dequeue() {
         if(this.front == null) {
-            throw new Exception('Nothing to dequeue, queue is empty')
+            throw new Error('Nothing to dequeue, queue is empty')
         } else {
             let ret = this.front;
             let curr = this.back;
@@ -39,7 +39,7 @@ class Queue {
 
     peek() {
         if(this.front == null) {
-            throw new Exception('Nothing to peek, queue is empty')
+            throw new Error('Nothing to peek, queue is empty')
         } else {
             return this.front.value;
         }
