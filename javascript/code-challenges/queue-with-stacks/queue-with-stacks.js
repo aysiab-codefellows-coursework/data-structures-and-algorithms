@@ -4,12 +4,12 @@ const Stack = require('../stacks-and-queues/stack')
 
 class PseudoQueue {
     constructor() {
-        this.stack = new Stack();
+        this.stack;
         this.temp = new Stack();
     }
 
     enqueue(value) {
-        if(this.stack.isEmpty()) {
+        if(this.temp.isEmpty()) {
             this.temp.push(value);
             this.stack = this.temp;
         } else {
