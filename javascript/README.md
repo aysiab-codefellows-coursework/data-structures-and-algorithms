@@ -11,3 +11,4 @@
 7. [Pseudoqueue](./code-challenges/queue-with-stacks/README.md)
 8. [FIFO Animal Shelter](./code-challenges/fifoanimalshetler/README.md)
 9. [Multi Bracket Validation](./code-challenges/multiBracketValidation/README.md)
+10. [Binary Search Tree](./code-challenges/tree/README.md)
