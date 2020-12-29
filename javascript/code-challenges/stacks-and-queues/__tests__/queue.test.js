@@ -28,6 +28,7 @@ describe('Queue', () => {
         queue.enqueue('todd');
         queue.enqueue('hollyhock');
         expect(queue.dequeue()).toBe('bojack');
+        expect(queue.dequeue()).toBe('todd');
     })
 
     it('Can successfully peek into a queue and seek the expected value', () => {
@@ -44,7 +45,7 @@ describe('Queue', () => {
         queue.dequeue();
         queue.dequeue();
         queue.dequeue();
-        expect(queue.isEmpty).toBeTruthy();
+        expect(queue.isEmpty()).toBeTruthy();
     })
 
     it('Can successfully instantiate an empty queue', () => {

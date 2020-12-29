@@ -20,6 +20,8 @@
     - O(log n) run time
 - `BST.findMaximumValue()`uses recursion checking every left and right node of a root node, comparing the value to the current saved max value.
     - O(n) run time.
+- `BST.breadthFirst(ret, temp, current)` where `ret` starts as an empty array, `temp` instantiates an empty Queue, and `current` is set to `this.root`. Breadth First Search uses recursion to add every child of a current root node to a queue, setting our current root node to the value of `temp.dequeue`. 
+    -O(n) run time.
 
 ### API
 - `BST.preOrder(array, current)` will return the values of the tree in an array in the following roder of root node, left child, right child. Upon the initial call `[]` should be passed in for `array` argument and `BST.root` should be passed in as the `current` root node argument 
@@ -30,6 +32,11 @@
 - `BST.contains(value, current)` will traverse through the tree returning either `true` if the value is in the tree or `false` if the value is not. Again, this method traverses the tree based on if the value we are searching for is lesser or greater than the root node. Lesser values will then to start only traversing the left side of the root, greater values will only start traversing the right side of the root. Upon initial call `value` is set to the value you are searching for and `current` is set to `BST.root`. 
 - Due to the recursive nature of all these methods, we have to keep track of `current` which is the current root node.
 - `BST.findMaximumValue()` using recursion traverses through ever right and left child of a given root node, and only updates the maxmimum value if the current value is greater. The maxmimum value is then returned. 
+- `BST.breadthFirst(ret, temp, current)` returns an array and values of the tree determined by breadth first search. See visual diagram on Breadth First below of what Breadth First search searches. 
 
 ### Whiteboard
+***FindMaximumValue***
 ![Image](../assets/findMaxValue.png)
+
+***Breadth First***
+![BreadthFirst](../assets/BreadthFirst.png)

@@ -1,5 +1,6 @@
 'use strict';
 
+const Queue = require('../stacks-and-queues/queue')
 const Node = require('./node')
 
 class BinaryTree {
@@ -56,6 +57,26 @@ class BinaryTree {
             max = this.findMaximumValue(max, current.leftChild);
         }
         return max;
+    }
+
+    breadthFirst(ret = [], temp = new Queue(), current = this.root) {
+        if(this.root == null) {
+            throw new Error('The tree is empty');
+        }
+        if(current) {
+            ret.push(current.value)
+        }
+        if(current.leftChild) {
+            temp.enqueue(current.leftChild);
+        }
+        if(current.rightChild) {
+            temp.enqueue(current.rightChild);
+        }
+        if(!temp.isEmpty()) {
+            current = temp.dequeue()
+            return this.breadthFirst(ret, temp, current);
+        }
+        return ret;
     }
 }
 
