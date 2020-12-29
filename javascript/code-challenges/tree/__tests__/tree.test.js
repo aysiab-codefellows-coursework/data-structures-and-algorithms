@@ -29,6 +29,21 @@ describe('Binary Search Tree', () => {
         expect(tree.root.leftChild.value).toBe(5);
     })
 
+    it('Can successfully have a multi leveled tree', () => {
+        tree.add(10, tree.root);
+        tree.add(5, tree.root);
+        tree.add(18, tree.root);
+        tree.add(11, tree.root);
+        tree.add(2, tree.root);
+        tree.add(7, tree.root);
+        expect(tree.root.value).toBe(10);
+        expect(tree.root.rightChild.value).toBe(18);
+        expect(tree.root.leftChild.value).toBe(5);
+        expect(tree.root.leftChild.leftChild.value).toBe(2);
+        expect(tree.root.leftChild.rightChild.value).toBe(7);
+        expect(tree.root.rightChild.leftChild.value).toBe(11);
+    })
+
     it('Can return a collection from a preorder traversal', () => {
         tree.add(10, tree.root);
         tree.add(5, tree.root);
@@ -61,4 +76,24 @@ describe('Binary Search Tree', () => {
         tree.add(2);
         expect(tree.findMaximumValue()).toBe(2);
     })
+
+    // this test fails because it recieves [5, 2, 11, 11, 7]
+    // am currently unsure why
+    it('Can successfully perform a breadth first search', () => {
+        tree.add(5);
+        tree.add(11);
+        tree.add(2);
+        tree.add(7);
+        expect(tree.breadthFirst()).toEqual([5,2,11,7]);
+    })
+
+    it('Can successfully perform a breadth first search with only one node', () => {
+        tree.add(5);
+        expect(tree.breadthFirst()).toEqual([5]);
+    })
+
+    it('Will throw an error on a breadth first search on an empty tree', () => {
+        expect(() => tree.breadthFirst()).toThrow('The tree is empty');
+    })
+    
 })

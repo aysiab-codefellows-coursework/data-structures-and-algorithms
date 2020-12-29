@@ -7,6 +7,7 @@ class Queue {
     constructor() {
         this.front = null;
         this.back = null;
+        this.length = 0;
     }
 
     enqueue(value) {
@@ -17,8 +18,8 @@ class Queue {
             let newNode = new Node(value);
             newNode.next = this.back;
             this.back = newNode;
-
         }
+        this.length += 1;
     }
 
     dequeue() {
@@ -33,6 +34,7 @@ class Queue {
                 }
                 curr = curr.next;
             }
+            this.length -= 1;
             return ret.value;
         }
     }
@@ -46,7 +48,7 @@ class Queue {
     }
 
     isEmpty() {
-        if(this.front == null) {
+        if(this.length == 0) {
             return true;
         } else {
             return false;
