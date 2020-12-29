@@ -10,7 +10,7 @@ class BinaryTree {
 
     // arr is the array to be returned, insantiate with empty array
     // instantiate current with this.root
-    preOrder(arr, current){
+    preOrder(arr = [], current = this.root){
         // root left right
         let ret = arr;
         if(current) {
@@ -23,7 +23,7 @@ class BinaryTree {
 
     // arr is the array to be returned, insantiate with empty array
     // instantiate current with this.root
-    inOrder(arr, current){
+    inOrder(arr = [], current = this.root){
         // left root right 
         let ret = arr;
         if(current) {
@@ -36,7 +36,7 @@ class BinaryTree {
 
     // arr is the array to be returned, insantiate with empty array
     // instantiate curret with this.root
-    postOrder(arr, current) {
+    postOrder(arr = [], current = this.root) {
         // left right root
         let ret = arr;
         if(current) {
@@ -45,6 +45,17 @@ class BinaryTree {
             ret.push(current.value);
         }
         return ret;
+    }
+
+    findMaximumValue(max = 0, current = this.root) {
+        if(current) {
+            if(current.value > max) {
+                max = current.value;
+            }
+            max = this.findMaximumValue(max, current.rightChild);
+            max = this.findMaximumValue(max, current.leftChild);
+        }
+        return max;
     }
 }
 
@@ -55,7 +66,7 @@ class BinarySearchTree extends BinaryTree {
     }
 
     // always instantiate current with this.root
-    add(value, current) {
+    add(value, current = this.root) {
         if(current == this.root && !this.root) {
             this.root = new Node(value);
         } else if(value > current.value) { 
@@ -77,7 +88,7 @@ class BinarySearchTree extends BinaryTree {
     }
 
     // always instantiate current with this.root
-    contains(value, current) {
+    contains(value, current = this.root) {
         if(!current) {
             return false;
         } else {
