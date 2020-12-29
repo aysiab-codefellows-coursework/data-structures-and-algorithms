@@ -40,3 +40,17 @@
 
 ***Breadth First***
 ![BreadthFirst](../assets/BreadthFirst.png)
+
+
+### Tests (**p**ass/**f**ail)
+- Binary Tree:
+    - postOrder [ p ]
+    - inOrder [ p ]
+    - preOrder [ p ]
+    - findMaximumValie [ p ]
+    - breadthFirst [ f ]
+        - test shows that the method adds a repeated node value to the return array. Currently unsure why. 
+
+- Binary Search Tree:
+    - add [ p ]
+    - contains [ p ]
