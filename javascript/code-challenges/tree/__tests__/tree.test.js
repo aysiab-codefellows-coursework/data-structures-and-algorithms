@@ -49,4 +49,16 @@ describe('Binary Search Tree', () => {
         tree.add(18, tree.root);
         expect(tree.postOrder([],tree.root)).toEqual([5, 18, 10]);
     })
+    
+    it('Can return a max value from the tree', () => {
+        tree.add(10, tree.root);
+        tree.add(5, tree.root);
+        tree.add(18, tree.root);
+        expect(tree.findMaximumValue()).toBe(18);
+    })
+
+    it('Can return the root value if its the only node', () => {
+        tree.add(2);
+        expect(tree.findMaximumValue()).toBe(2);
+    })
 })

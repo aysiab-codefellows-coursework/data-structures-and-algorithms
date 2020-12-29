@@ -18,6 +18,8 @@
 - A third class, Binary Search Tree was created that extends Binary Tree and has two of its own methods add and contains 
     - `add(value, current)` and `contains(value, current)` are also recursive, however due to the nature of the Binary Search Tree, we are only traversing through half the tree at any given time. 
     - O(log n) run time
+- `BST.findMaximumValue()`uses recursion checking every left and right node of a root node, comparing the value to the current saved max value.
+    - O(n) run time.
 
 ### API
 - `BST.preOrder(array, current)` will return the values of the tree in an array in the following roder of root node, left child, right child. Upon the initial call `[]` should be passed in for `array` argument and `BST.root` should be passed in as the `current` root node argument 
@@ -27,4 +29,7 @@
     - if a value is added more than once, the count property of the node with the given value will be updated 
 - `BST.contains(value, current)` will traverse through the tree returning either `true` if the value is in the tree or `false` if the value is not. Again, this method traverses the tree based on if the value we are searching for is lesser or greater than the root node. Lesser values will then to start only traversing the left side of the root, greater values will only start traversing the right side of the root. Upon initial call `value` is set to the value you are searching for and `current` is set to `BST.root`. 
 - Due to the recursive nature of all these methods, we have to keep track of `current` which is the current root node.
+- `BST.findMaximumValue()` using recursion traverses through ever right and left child of a given root node, and only updates the maxmimum value if the current value is greater. The maxmimum value is then returned. 
 
+### Whiteboard
+![Image](../assets/findMaxValue.png)
