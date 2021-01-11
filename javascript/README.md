@@ -12,3 +12,4 @@
 8. [FIFO Animal Shelter](./code-challenges/fifoanimalshetler/README.md)
 9. [Multi Bracket Validation](./code-challenges/multiBracketValidation/README.md)
 10. [Binary Search Tree](./code-challenges/tree/README.md)
+11. [Insertion Sort Blog](./code-challenges/insertion-sort/blog.md)
