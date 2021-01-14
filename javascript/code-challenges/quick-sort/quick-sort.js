@@ -31,3 +31,5 @@ function swap(arr, i, low) {
     arr[low] = temp;
     return arr;
 }
+
+module.exports = quickSort;
