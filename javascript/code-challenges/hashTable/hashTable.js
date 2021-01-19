@@ -21,10 +21,21 @@ class HashTable {
 
     add(key, value) {
         let index = this.hash(key);
+        let exists = false;
         if(!this.buckets[index]) {
             this.buckets[index] = new LinkedList();
+        } else {
+           let curr = this.buckets[index].head;
+           while(curr) {
+               if(curr.value[key]) {
+                   exists = true;
+               }
+               curr = curr.next;
+           } 
         }
-        this.buckets[index].insert({[key]: value});
+        if(!exists) {
+            this.buckets[index].insert({[key]: value});
+        }
     }
 
     get(key) {
@@ -40,6 +51,19 @@ class HashTable {
         } 
             return null;
     }
+
+    // update(key, value) {
+    //     let index = this.hash(key);
+    //     if(this.buckets[index]) {
+    //         let curr = this.buckets[index].head;
+    //         while(curr) {
+    //             if(curr.value[key]) {
+    //                 curr.value[key] = value;
+    //             }
+    //             curr = curr.next;
+    //         }
+    //     }
+    // }
 
     contains(key) {
         if(this.get(key)) {
