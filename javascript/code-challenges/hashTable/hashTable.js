@@ -52,18 +52,18 @@ class HashTable {
             return null;
     }
 
-    // update(key, value) {
-    //     let index = this.hash(key);
-    //     if(this.buckets[index]) {
-    //         let curr = this.buckets[index].head;
-    //         while(curr) {
-    //             if(curr.value[key]) {
-    //                 curr.value[key] = value;
-    //             }
-    //             curr = curr.next;
-    //         }
-    //     }
-    // }
+    update(key, value) {
+        let index = this.hash(key);
+        if(this.buckets[index]) {
+            let curr = this.buckets[index].head;
+            while(curr) {
+                if(curr.value[key]) {
+                    curr.value[key] = value;
+                }
+                curr = curr.next;
+            }
+        }
+    }
 
     contains(key) {
         if(this.get(key)) {
