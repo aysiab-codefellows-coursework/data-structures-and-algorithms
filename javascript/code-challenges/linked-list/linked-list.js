@@ -20,11 +20,11 @@ class LinkedList {
 
     includes(value) {
         let curr = this.head;
-        while(curr != null && curr.next != null) {
-            if (curr.value == value || curr.next.value == value) {
+        while(curr) {
+            if (curr.value == value) {
                 return true;
             }
-            curr = curr.next.next;
+            curr = curr.next;
         }
         return false;
     }
