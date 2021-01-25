@@ -133,6 +133,13 @@ describe('Linked List', () => {
     expect(ll.kthFromTheEnd(2)).toBe('mouse')
   })
 
+  it('Testing includes', () => {
+    ll.insert('cat')
+    ll.insert('dog')
+    ll.insert('mouse')
+    expect(ll.includes('cat')).toBe(true);
+  })
+
 
 });
 
